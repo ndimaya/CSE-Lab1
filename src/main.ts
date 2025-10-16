@@ -13,28 +13,28 @@ stage.add(layer);
 
 //create shape
 const lemon = new Konva.Group({
-    x: 0,
-    y: 0,
+    x: stage.width() / 2,
+    y: stage.height() / 2,
     draggable: true
 });
 
 const ellipse1 = new Konva.Ellipse ({
-    x: stage.width() / 2,
-    y: stage.height() / 2,
+    x: 0,
+    y: 0,
     radiusX: 100,
     radiusY: 50,
     fill: 'yellow',
 });
 const ellipse2 = new Konva.Ellipse ({
-    x: stage.width() / 2 - 100,
-    y: stage.height() / 2,
+    x: 100,
+    y: 0,
     radiusX: 5,
     radiusY: 20,
     fill: 'yellow',
 });
 const ellipse3 = new Konva.Ellipse ({
-    x: stage.width() / 2 + 100,
-    y: stage.height() / 2,
+    x: -100,
+    y: 0,
     radiusX: 5,
     radiusY: 20,
     fill: 'yellow',
@@ -53,17 +53,11 @@ layer.add(lemon);
 //add layer to stage
 stage.add(layer);
 
-//abimation timings
-const period = 2000;
 
-const anim = new Konva.Animation(function(frame) {
-const scale = Math.sin(frame.time * 2 * Math.PI / period) + 2;
-lemon.scaleX(scale);
-});
 //mouseover stuff
 lemon.on('pointerdown', ()=> {
-anim.start();
+lemon.to({scaleX: 1.2, scaleY:1.2});
 });
 lemon.on('pointerup', () => {
-    anim.stop();
+    lemon.to({scaleX: 1, scaleY: 1});
 });

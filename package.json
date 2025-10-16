@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev":"vite",
-    "build":"vite build",
+    "dev": "vite",
+    "build": "vite build",
     "preview": "vite preview"
   },
   "keywords": [],
@@ -17,5 +17,13 @@
   "devDependencies": {
     "typescript": "^5.9.3",
     "vite": "^7.1.8"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ndimaya/CSE-Lab1.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ndimaya/CSE-Lab1/issues"
+  },
+  "homepage": "https://github.com/ndimaya/CSE-Lab1#readme"
 }
